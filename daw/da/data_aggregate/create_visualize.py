@@ -18,7 +18,7 @@ df = pd.DataFrame(data)
 # Step 2: Visualizing Your Data
 # Visualizing the sales of different avocado sizes
 plt.figure(figsize=(10, 5))
-df.groupby('Size')['Sales'].sum().plot(kind='bar', color='skyblue')
+df.groupby('Size')['Sales'].sum().plot(kind='bar', color='blue')
 plt.title('Total Sales by Avocado Size')
 plt.xlabel('Avocado Size')
 plt.ylabel('Total Sales')
@@ -67,7 +67,7 @@ df['Type'] = ['Conventional', 'Organic', 'Conventional', 'Organic', 'Conventiona
 
 # Visualizing price differences
 plt.figure(figsize=(10, 5))
-df.groupby('Type')['Price'].mean().plot(kind='bar', color='lightgreen')
+df.groupby('Type')['Price'].mean().plot(kind='bar', color='orange')
 plt.title('Average Price of Conventional vs. Organic Avocados')
 plt.xlabel('Avocado Type')
 plt.ylabel('Average Price')
