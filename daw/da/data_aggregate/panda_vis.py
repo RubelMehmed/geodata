@@ -1,4 +1,3 @@
-# Import matplotlib.pyplot with alias plt
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -37,16 +36,46 @@ plt.title("Total Avocados Sold Over Time")
 plt.show()
 
 # Scatter plot of avg_price vs. nb_sold with title
-# plt.scatter(avocados["nb_sold"], avocados["avg_price"], color='blue', alpha=0.7)
+plt.scatter(avocados["nb_sold"], avocados["avg_price"], color='blue', alpha=0.7)
 
 # Add labels and title
-# plt.xlabel("Number of Avocados Sold")
-# plt.ylabel("Average Price (USD)")
-# plt.title("Number of Avocados Sold vs. Average Price")
-
+plt.xlabel("Number of Avocados Sold")
+plt.ylabel("Average Price (USD)")
+plt.title("Number of Avocados Sold vs. Average Price")
+plt.show()
 #Or  the other way is call directly;  Scatter plot of avg_price vs. nb_sold with title
 avocados.plot(x="nb_sold", y="avg_price", kind="scatter", title="Number of avocados sold vs. average price")
 
 # Show the plot
 plt.show()
 
+# Histogram of conventional avg_price
+avocados_conventional = avocados[avocados["type"] == "conventional"]
+plt.hist(avocados_conventional["avg_price"], alpha=0.5, label="Conventional")
+
+# Histogram of organic avg_price
+avocados_organic = avocados[avocados["type"] == "organic"]
+plt.hist(avocados_organic["avg_price"], alpha=0.5, label="Organic")
+
+# Add a legend
+plt.legend()
+
+# Add titles and labels
+plt.title("Histogram of Average Prices for Avocado Types")
+plt.xlabel("Average Price")
+plt.ylabel("Frequency")
+
+# Show the plot
+plt.show()
+
+# Histogram of conventional avg_price 
+avocados[avocados["type"] == "conventional"]["avg_price"].hist()
+
+# Histogram of organic avg_price
+avocados[avocados["type"] == "organic"]["avg_price"].hist()
+
+# Add a legend
+plt.legend(["conventional", "organic"])
+
+# Show the plot
+plt.show()
